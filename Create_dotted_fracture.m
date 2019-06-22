@@ -5,19 +5,21 @@
 % according to the input parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-clear all
-close all
 
 
 dom.size_x = 250;         %domain size in X
 dom.size_y = dom.size_x;  %domain size in Y
-dom.size_z = 30;          %fracture aperture
+dom.size_z = 20 +2;       %fracture aperture (void space + solid surfaces)
 dom.circle_spacing = 10;  %spacing between circles
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%End of inputs
+
 dom.circle_diam = 50;     %circle diameter
 dom.name=[num2str(dom.size_x),'_',num2str(dom.size_z),...
     '_circles_',num2str(dom.circle_diam)];
 
-fid_domain1=fopen([dom.name '.dat'],'w');
+fid_domain1=fopen(['output/' dom.name '.dat'],'w');
 B=zeros(dom.size_x,dom.size_y,dom.size_z); %3D matrix
 C=ones(dom.size_x,dom.size_y);  %fracture walls
 

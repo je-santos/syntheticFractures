@@ -5,13 +5,16 @@
 % according to the input parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-stripes = [6,12,24]; %number of stripes
-z = 1; %fracture aperture
+stripes = [6,12,24]; %number of stripes on the surface
+z = 20+2; %fracture aperture (void space + solid surfaces)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%End of inputs
 
 for k=1:numel(stripes)
     s=stripes(k);
     s_char=num2str(s);
-    fid_domain1=fopen([s_char '_stripes.dat'],'w');
+    fid_domain1=fopen(['output\' s_char '_stripes.dat'],'w');
     A=ones(250,250); %y,x (real life)
     B(:,[1,2,203,204])=4;
     frac_sizey=size(A);

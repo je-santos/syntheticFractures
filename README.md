@@ -1,2 +1,2 @@
 # syntheticFractures
-Matlab codes to create synthetic fractures for multiphase simulation
+Matlab codes to create synthetic fractures for direct multiphase simulation
